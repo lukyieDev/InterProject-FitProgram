@@ -25,7 +25,7 @@ do{
 	while(nome[i] != '\0' && nomeVer != 1){    
         if((nome[i] >= 'a' && nome[i] <= 'z') || (nome[i] >= 'A' && nome[i] <= 'Z') || isspace(nome[i])){
             i++;
-			nomeVer = 1;
+			nomeVer = 0;
         }else{
             printf("Por favor digite somente letras.");
             printf("\n\tDigite o seu nome: ");
@@ -46,7 +46,6 @@ do{
 		while(idadeVer[i] < '0' || idadeVer[i] > '9'){
 		printf("Idade invalida, digite uma idade valida: ");
 		scanf("%s", idadeVer);
-
 		}
 		i++;
 	}
@@ -73,9 +72,9 @@ do{
 		scanf("%s", &alturaVer);
 		fflush(stdin);
 		i = 0;
-	if (alturaVer[i] == '-'){
+	if(alturaVer[i] == '-'){
 			i++;
-		}
+	}
 		// Verificar se os caracteres seguintes sao digitos ou ponto decimal
 	while (alturaVer[i] != '\0'){
 		while ((alturaVer[i] < '0' || alturaVer[i] > '9') && alturaVer[i] != ','){
