@@ -95,10 +95,10 @@ do{
 			pesoIdeal = (72.7*altura) - 58;
 			printf("\tSeu peso ideal e: %.1fKg\n",pesoIdeal);
 		}else if (strcmp(genero, "2") == 0){
-			printf("Genero: Feminino\n");
+			printf("\tGenero: Feminino\n");
 			strcpy(genString, "Feminino");	
 			pesoIdeal = (62.1*altura) - 44.7;
-			printf("\tSeu peso ideal e:%.1f\n",pesoIdeal);
+			printf("\tSeu peso ideal e: %.1f\n",pesoIdeal);
 		}else{
 			printf("Voce nao digitou uma opcao valida!\n");
 		}
@@ -127,7 +127,7 @@ do{
    do{
 	   printf("________________________________________________________________________________________\n\n");	
 	   printf("Qual o seu nivel de atividade fisica:\n\n");
-	   printf("Digite 1 não pratica nenhuma atividade fisica\n");
+	   printf("Digite 1 nao pratica nenhuma atividade fisica\n");
    	   printf("Digite 2 pratica atividades fisicas 1 a 2 vezes na semana\n");
 	   printf("Digite 3 pratica atividades fisicas 4 vezes ou mais na semana\n");
 	   printf("\tDigite aqui: ");
@@ -159,7 +159,7 @@ do{
 	}
 	printf("\nSua Taxa Metabolica Basal(TMB) e: %.2f calorias por dia!\n", tmb);
 	imc = peso / (altura * altura);
-	printf("Seu IMC e: %.1f\n\n", imc);
+	printf("Seu IMC: %.1f\n\n", imc);
 	if (imc <= 18.5){
 		printf("Voce esta abaixo do peso!\n\n");
 	}else if (imc >= 18.6 && imc < 24.9){
@@ -382,7 +382,7 @@ do{
 		printf("3-Hidrate-se\n");
 	}
 	printf("________________________________________________________________________________________\n\n");
-    printf("Aqui estao informacoes:\n");
+    printf("Dados informados:\n");
    	printf("\tNome: %s\n", nome);
 	printf("\tIdade: %d anos\n", idade);
 	printf("\tGenero escolhido: %s\n", genString);
@@ -390,11 +390,11 @@ do{
 	printf("\tAltura: %.2f\n", altura);
 	printf("\tSeu peso ideal e: %.2fKg\n", pesoIdeal);
 	printf("\tObjetivo escolhido: %s\n", objString);
-	printf("Nivel de atividade fisica escolhida: %s\n",atvString);
-	printf("\tSeu IMC deu:%.2f\n", imc);
-	printf("\tSeu TMB deu:%.2f\n", tmb);	
+	printf("\tNivel de atividade fisica: %s\n",atvString);
+	printf("\tSeu IMC: %.2f\n", imc);
+	printf("\tSeu TMB: %.2f\n", tmb);	
     printf("________________________________________________________________________________________\n\n");
-	printf("\nEscolha '1' para sair do programa ou '2' para repetir todo o processo\n");
+	printf("\nEscolha 1 para Finalizar ou 2 para Repetir\n");
     scanf(" %s", &continuarVer);
     fflush(stdin);
     i = 0;
