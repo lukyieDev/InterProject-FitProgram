@@ -19,7 +19,7 @@ do{
 	printf("");	printf("\t Bem Vindo a UBfit!"); printf("");
 	SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 	printf("\n________________________________________________________________________________________\n");
-		printf("\nPrimeiro preciso pegar seu nome e idade por favor!");	
+		printf("\nPor favor digite seu nome e sua idade!");	
 		printf("\n\tDigite o seu nome: ");
 		scanf("%[^\n]%*c", &nome);
 	while(nome[i] != '\0' && nomeVer != 1){    
@@ -51,7 +51,7 @@ do{
 	}
 	idade = strtof(idadeVer, NULL);
 	printf("________________________________________________________________________________________\n");
-	printf("\nAgora vamos precisar saber o seu peso e altura para determinar o seu IMC.\n");
+	printf("\nPrecisamos saber o seu peso e altura para calcular o seu IMC.\n");
 	printf("\tInforme seu peso Kg(Ex: 70,5Kg): ");
 	scanf("%s", &pesoVer);
 	fflush(stdin);
@@ -68,7 +68,7 @@ do{
 		i++;
 	}
 		peso = strtof(pesoVer, NULL);
-		printf("\tInforme sua altura(Ex: 1,70m):");
+		printf("\tInforme sua altura(Ex: 1,70m): ");
 		scanf("%s", &alturaVer);
 		fflush(stdin);
 		i = 0;
@@ -86,16 +86,16 @@ do{
 	altura = strtof(alturaVer, NULL);
 	do{
 		printf("________________________________________________________________________________________\n\n");
-		printf("Agora preciso saber seu genero para calcular seu peso ideal:");
+		printf("Precisamos saber seu genero para calcular o seu peso ideal:");
 		printf("\n\tDigite 1 para Masculino ou 2 para Feminino: ");
     	scanf("%s", &genero);
 		if (strcmp(genero, "1") == 0){
-			printf("\tGenero Masculino.\n");
+			printf("\tGenero: Masculino.\n");
 			strcpy(genString, "Masculino");
 			pesoIdeal = (72.7*altura) - 58;
-			printf("\tSeu peso ideal e:%.1fKg\n",pesoIdeal);
+			printf("\tSeu peso ideal e: %.1fKg\n",pesoIdeal);
 		}else if (strcmp(genero, "2") == 0){
-			printf("Genero Feminino");
+			printf("Genero: Feminino\n");
 			strcpy(genString, "Feminino");	
 			pesoIdeal = (62.1*altura) - 44.7;
 			printf("\tSeu peso ideal e:%.1f\n",pesoIdeal);
@@ -105,7 +105,7 @@ do{
 	}while((strcmp(genero, "1")!= 0)&&(strcmp(genero, "2")!= 0));
     do{
 		printf("\n________________________________________________________________________________________\n");
-    	printf("Agora escolha abaixo qual alternativa mais se aproxima de seu objetivo em nossa academia:");
+    	printf("Escolha qual o seu objetivo em nossa academia:");
     	printf("\n\tDigite 1 para Hipertrofia");
     	printf("\n\tDigite 2 para Emagrecimento");
     	printf("\n\tDigite 3 para Bem estar e saude");
@@ -126,10 +126,10 @@ do{
     } while ((strcmp(objetivo, "1") != 0) && (strcmp(objetivo, "2") != 0) && (strcmp(objetivo, "3") != 0));
    do{
 	   printf("________________________________________________________________________________________\n\n");	
-	   printf("Agora escolha seu nivel de atividade fisica:\n\n");
-	   printf("Digite 1 se voce nao pratica nenhuma atividade fisica\n");
-   	   printf("Digite 2 se voce pratica atividades fisicas de 1 a 2 vezes na semana\n");
-	   printf("Digite 3 se voce pratica atividades fisicas 4 vezes ou mais na semana\n");
+	   printf("Qual o seu nivel de atividade fisica:\n\n");
+	   printf("Digite 1 não pratica nenhuma atividade fisica\n");
+   	   printf("Digite 2 pratica atividades fisicas 1 a 2 vezes na semana\n");
+	   printf("Digite 3 pratica atividades fisicas 4 vezes ou mais na semana\n");
 	   printf("\tDigite aqui: ");
 	   scanf("%s", &atividadeFisica);
 	
@@ -141,7 +141,7 @@ do{
         	strcpy(atvString, "Atividade fisica 1 a 2 vezes na semana");
 	  }else if(strcmp(atividadeFisica, "3") == 0){
         	printf("atividade fisica 4 vezes ou mais na semana\n\n");
-        	strcpy(atvString, "Atividade fisica 4 vezes ou mais na semana");
+        	strcpy(atvString, "Atividades físicas 4 vezes ou mais na semana");
 	}
    } while ((strcmp(atividadeFisica, "1") != 0) && (strcmp(atividadeFisica, "2") != 0) && (strcmp(atividadeFisica, "3") != 0));
 		if(strcmp(genero, "1") == 0 && idade<29){
@@ -161,176 +161,176 @@ do{
 	imc = peso / (altura * altura);
 	printf("Seu IMC e: %.1f\n\n", imc);
 	if (imc <= 18.5){
-		printf("Voce esta abaixo do peso!\n");
+		printf("Voce esta abaixo do peso!\n\n");
 	}else if (imc >= 18.6 && imc < 24.9){
-		printf("Seu peso esta normal!\n");
+		printf("Seu peso esta normal!\n\n");
 	}else if (imc >= 25 && imc < 29.9){
-		printf("Voce esta com Sobrepeso!\n");
+		printf("Voce esta com Sobrepeso!\n\n");
 	}else if (imc >= 30 && imc < 34.9){
-		printf("Voce esta com Obesidade grau 1!\n");
+		printf("Voce esta com Obesidade grau 1!\n\n");
 	}else if (imc >= 35 && imc <= 39.9){
-		printf("Voce esta com Obesidade grau 2!\n");
+		printf("Voce esta com Obesidade grau 2!\n\n");
 	}else{
-		printf("Voce esta com Obesidade Grau 3!\n");
+		printf("Voce esta com Obesidade Grau 3!\n\n");
 	}
 	if(imc <=18.5 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Alimente-se com frequencia\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Consumir mais calorias do que gasta\n");
 		printf("4-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("5-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("5-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Alimente-se com frequencia\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Consumir mais calorias do que gasta\n");
 		printf("4-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("5-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("5-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc <=18.5 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Alimente-se com frequencia\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Consumir mais calorias do que gasta\n");
 		printf("4-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("5-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("5-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Alimente-se com frequencia\n");
 		printf("4-Consumir mais calorias do que gasta\n");
 		printf("5-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("6-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("6-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Alimente-se com frequencia\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Consumir mais calorias do que gasta\n");
 		printf("4-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("5-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("5-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Alimente-se com frequencia\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Consumir mais calorias do que gasta\n");
 		printf("4-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("5-Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("5-Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc >= 18.6 && imc < 24.9 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Alimente-se com frequencia\n");
-		printf("2- Hidrate-se\n");
+		printf("2-Hidrate-se\n");
 		printf("3-Consumir mais calorias do que gasta\n");
 		printf("4-Adicione calorias extras e saudaveis em seu prato\n");
-		printf("5Faca exercicios fisicos para o desenvolvimento muscular\n");
+		printf("5Faça exercícios físicos para o desenvolvimento muscular\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("4- Hidrate-se\n");
+		printf("2-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("4-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("4- Hidrate-se\n");
+		printf("2-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("4-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("4- Hidrate-se\n");
+		printf("2-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("4-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("4- Hidrate-se\n");
+		printf("2-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("4-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("4- Hidrate-se\n");
+		printf("2-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("4-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1-Se exercite mais\n");
-		printf("2- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("4- Hidrate-se\n");
+		printf("2-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("4-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "1") ==0)){
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "2") ==0)){
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=25.0 && imc<29.9 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("1- Crie uma rotina alimentar saudavel\n");
 		printf("3- Se alimente sempre, mas em pequena porcao\n");
@@ -338,48 +338,48 @@ do{
 	}else if(imc>=30 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("Procure um profissional nutricionista!\n");
 		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("3- Hidrate-se\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porcao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porcao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "1") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porçao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porçao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porçao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porçao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porçao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porçao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "2") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porçao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porçao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "1") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porçao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porçao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "2") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porçao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porçao\n");
+		printf("3-Hidrate-se\n");
 	}else if(imc>=30 && (strcmp(atividadeFisica, "3") == 0) && (strcmp(objetivo, "3") ==0)){
 		printf("Procure um profissional nutricionista!\n");
-		printf("1- Crie uma rotina alimentar saudavel\n");
-		printf("3- Se alimente sempre, mas em pequena porçao\n");
-		printf("3- Hidrate-se\n");
+		printf("1-Crie uma rotina alimentar saudavel\n");
+		printf("3-Se alimente sempre, mas em pequena porçao\n");
+		printf("3-Hidrate-se\n");
 	}
 	printf("________________________________________________________________________________________\n\n");
     printf("Aqui estao informacoes:\n");
