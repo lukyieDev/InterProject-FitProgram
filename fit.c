@@ -39,12 +39,13 @@ do{
 	}
 	// Verificar se os caracteres seguintes sao digitos ou ponto decimal
 	while(idadeVer[i] != '\0'){
-		while((idadeVer[i] < '0' || idadeVer[i] > '9')&&(idadeVer[i] >= 'a' && idadeVer[i] <= 'z' || idadeVer[i] >= 'A' && idadeVer[i] <= 'Z')){
+		if(!isdigit(idadeVer[i])){
 			printf("\t\tIdade inválida, digite uma idade válida: ");
 			scanf("%s", idadeVer);
 			fflush(stdin);
+		}else{
+			i++;
 		}
-		i++;
 	}
 	idade = strtof(idadeVer, NULL);
 	printf("\t_____________________________________________________________________________________________\n\n");
